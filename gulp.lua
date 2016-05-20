@@ -44,7 +44,9 @@ Gulp.get_gulp_tasks_lines = function(message)
         return nil
     end
     io.write(message)
-    return split(file:read("*a"), "\n")
+    local data = file:read("*a")
+    file.close()
+    return split(data, "\n")
 end
 
 Gulp.get_completions_from = function(lines)

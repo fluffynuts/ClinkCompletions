@@ -4,9 +4,10 @@ Npm.get_npm_scripts = function()
     if packageJson == nil then
         return { }
     end
-    local file = io.open(packageJson, "r")
-    local lines = split(file:read("*a"), "\n")
-    file.close()
+    local file = io.open(packageJson, 'r')
+    local data = file:read('*a')
+    file:close()
+    local lines = split(data, '\n')
     local i = 1
     local j = 1
     local result = {""}

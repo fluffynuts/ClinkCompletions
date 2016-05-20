@@ -4,7 +4,7 @@ function find_file_upward(search)
     while depth < 32 do
         local fp = io.open(search, 'r')
         if fp ~= nil then
-            fp.close()
+            fp:close()
             return search
         end
         search = '../'..search
